@@ -13,3 +13,6 @@ class ToDoItem:
 
     def mark_item(self):
         self.is_done = True
+
+    def __str__(self):
+        return self.name + " - " + self.description

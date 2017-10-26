@@ -16,7 +16,8 @@ class ToDoList:
             pass
 
     def __str__(self):
+        index_start = 1
         display_list = []
-        for index, item in enumerate(self.todo_items):
-            display_list.append(str(index)+str(item))
+        for index, item in enumerate(self.todo_items, index_start):
+            display_list.append(str(index)+". "+str(item))
         return "".join(display_list)
