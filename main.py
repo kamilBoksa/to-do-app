@@ -11,6 +11,7 @@ def import_ui():
 
 def main():
     print(import_ui())
+    handle_ui_choice()
 
 
 if __name__ == "__main__":

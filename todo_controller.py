@@ -19,6 +19,22 @@ def create_task():
         return task
 
 
-todo_list = ToDoList()
-todo_list.add_item(create_task())
-print(todo_list)
+def handle_ui_choice():
+    while True:
+        choice = input("User choice: ")
+        if choice == "1":
+            pass
+        if choice == "2":
+            pass
+        if choice == "3":
+            pass
+        elif choice == "4":
+            pass
+        elif choice == "5":
+            pass
+        elif choice == "6":
+            pass
+        elif choice == "0":
+            exit()
+        else:
+            print("Invalid input!")
