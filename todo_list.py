@@ -10,10 +10,8 @@ class ToDoList:
         self.todo_items.append(item)
 
     def delete_item(self, item_name):
-        try:
-            self.todo_items.remove(item_name)
-        except ValueError:
-            pass
+        self.todo_items.remove(item_name)
+
 
     def __str__(self):
         index_start = 1
