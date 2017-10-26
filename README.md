@@ -18,4 +18,8 @@ Expected features:
         2.display name
         3.display description
 
+Extra features:
+    - show time
+    - printing in table form
+    
 Each action described above should have view.
