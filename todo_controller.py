@@ -19,21 +19,36 @@ def create_task():
         return task
 
 
+def add_task_to_list(todo_items, task):
+    todo_items.add_item(task)
+
+
+def delete_task_from_list(todo_items):
+    try:
+        item_name = input("Enter name of task you want to delete: ")
+        if item_name in task_list:
+            task_list.delete_item(item_name)
+    except ValueError:
+        print("No task with that name found!")
+
+
 def handle_ui_choice():
+    todo_items = ToDoList()
+
     while True:
         choice = input("User choice: ")
         if choice == "1":
-            pass
+            add_task_to_list(todo_items, create_task())
         if choice == "2":
-            pass
+            pass  # modify task
         if choice == "3":
-            pass
+            delete_task_from_list(todo_items)
         elif choice == "4":
-            pass
+            pass  # mark task
         elif choice == "5":
-            pass
+            pass  # display tasks
         elif choice == "6":
-            pass
+            pass  # display specific task
         elif choice == "0":
             exit()
         else:
