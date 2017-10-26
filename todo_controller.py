@@ -26,10 +26,47 @@ def add_task_to_list(todo_items, task):
 def delete_task_from_list(todo_items):
     try:
         item_name = input("Enter name of task you want to delete: ")
-        if item_name in task_list:
-            task_list.delete_item(item_name)
+        if item_name in todo_items:
+            todo_items.delete_item(item_name)
     except ValueError:
         print("No task with that name found!")
+
+
+def modify_task_name(task):
+    while True:
+        new_name = input("Enter task new name: ")
+        if len(new_name) > 20:
+            print("Too long task name!")
+            continue
+        task.change_task_name(new_name)
+        break
+
+
+def modify_task_description(task):
+    while True:
+        new_description = input("Enter task new description: ")
+        if len(new_description) > 150:
+            print("Too long task description!")
+            continue
+        task.change_task_description(new_description)
+        break
+
+
+def modify_task(todo_items):
+    task_name = input("Enter name of task you want to edit: ")
+    for task in todo_items.todo_items:
+        if task_name == task.name:
+            choice = input("""
+            [1] Edit name.
+            [2] Edit description.
+            : """)
+            if choice == "1":
+                modify_task_name(task)
+                break
+            elif choice == "2":
+                modify_task_description(task)
+                break
+
 
 
 def handle_ui_choice():
@@ -39,14 +76,14 @@ def handle_ui_choice():
         choice = input("User choice: ")
         if choice == "1":
             add_task_to_list(todo_items, create_task())
-        if choice == "2":
-            pass  # modify task
-        if choice == "3":
+        elif choice == "2":
+            modify_task(todo_items)
+        elif choice == "3":
             delete_task_from_list(todo_items)
         elif choice == "4":
             pass  # mark task
         elif choice == "5":
-            pass  # display tasks
+            print(todo_items)
         elif choice == "6":
             pass  # display specific task
         elif choice == "0":
