@@ -9,6 +9,9 @@ def create_task():
         if len(task_name) > 20:
             print("Too long task name!")
             continue
+        elif len(task_name) == 0:
+            print("Task name cannot be empty!")
+            continue
         break
     while creating_task:
         task_description = input("Enter task description (max 150 chars):")
@@ -24,11 +27,16 @@ def add_task_to_list(todo_items, task):
 
 
 def delete_task_from_list(todo_items):
-    task_name = input("Enter name of task you want to delete: ")
-    for task in todo_items.todo_items:
-        if task_name == task.name:
-            todo_items.delete_item(task)
-            break
+    try:
+        task_name = input("Enter name of task you want to delete: ")
+        for task in todo_items.todo_items:
+            if task_name == task.name:
+                todo_items.delete_item(task)
+                break
+        else:
+            raise ValueError
+    except ValueError:
+        print("No task with that name found!")
 
 
 def modify_task_name(task):
@@ -53,39 +61,62 @@ def modify_task_description(task):
 
 def modify_task(todo_items):
     task_name = input("Enter name of task you want to edit: ")
-    for task in todo_items.todo_items:
-        if task_name == task.name:
-            choice = input("""
-            [1] Edit name.
-            [2] Edit description.
-            : """)
-            if choice == "1":
-                modify_task_name(task)
-                break
-            elif choice == "2":
-                modify_task_description(task)
-                break
+    try:
+        for task in todo_items.todo_items:
+            if task_name == task.name:
+                choice = input("""
+                [1] Edit name.
+                [2] Edit description.
+                : """)
+                if choice == "1":
+                    modify_task_name(task)
+                    break
+                elif choice == "2":
+                    modify_task_description(task)
+                    break
+        else:
+            raise ValueError
+    except ValueError:
+        print("No task with that name found!")
 
 
 def mark_task(todo_items):
-    task_name = input("Enter name of task you want to mark: ")
-    for task in todo_items.todo_items:
-        if task_name == task.name:
-            task.mark_item()
+    try:
+        task_name = input("Enter name of task you want to mark: ")
+        for task in todo_items.todo_items:
+            if task_name == task.name:
+                task.mark_item()
+                break
+        else:
+            raise ValueError
+    except ValueError:
+        print("No task with that name found!")
 
 
 def unmark_task(todo_items):
-    task_name = input("Enter name of task you want to unmark: ")
-    for task in todo_items.todo_items:
-        if task_name == task.name:
-            task.unmark_item()
+    try:
+        task_name = input("Enter name of task you want to unmark: ")
+        for task in todo_items.todo_items:
+            if task_name == task.name:
+                task.unmark_item()
+                break
+        else:
+            raise ValueError
+    except ValueError:
+        print("No task with that name found!")
 
 
 def display_specific_task(todo_items):
-    task_name = input("Enter name of task you want to display: ")
-    for task in todo_items.todo_items:
-        if task_name == task.name:
-            print(task)
+    try:
+        task_name = input("Enter name of task you want to display: ")
+        for task in todo_items.todo_items:
+            if task_name == task.name:
+                print(task)
+                break
+        else:
+            raise ValueError
+    except ValueError:
+        print("No task with that name found!")
 
 
 def handle_ui_choice():
