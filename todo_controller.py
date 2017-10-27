@@ -26,7 +26,7 @@ def add_task_to_list(todo_items, task):
 def delete_task_from_list(todo_items):
     try:
         item_name = input("Enter name of task you want to delete: ")
-        if item_name in todo_items:
+        if item_name in todo_items.todo_items:
             todo_items.delete_item(item_name)
     except ValueError:
         print("No task with that name found!")
