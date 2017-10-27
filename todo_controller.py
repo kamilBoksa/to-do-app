@@ -67,6 +67,12 @@ def modify_task(todo_items):
                 break
 
 
+def mark_task(todo_items):
+    task_name = input("Enter name of task you want to mark: ")
+    for task in todo_items.todo_items:
+        if task_name == task.name:
+            task.mark_item()
+
 
 def handle_ui_choice():
     todo_items = ToDoList()
@@ -80,7 +86,7 @@ def handle_ui_choice():
         elif choice == "3":
             delete_task_from_list(todo_items)
         elif choice == "4":
-            pass  # mark task
+            mark_task(todo_items)
         elif choice == "5":
             print(todo_items)
         elif choice == "6":
