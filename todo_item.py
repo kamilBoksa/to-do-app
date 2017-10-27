@@ -15,4 +15,4 @@ class ToDoItem:
         self.is_done = True
 
     def __str__(self):
-        return self.name + " - " + self.description
+        return self.name + " - " + self.description + " - isDone: " + str(self.is_done)
