@@ -13,9 +13,20 @@ class ToDoList:
         self.todo_items.remove(item)
 
     def save_items_to_file(self, file_name):
-        with open(file_name, 'a') as export_file:
+        with open(file_name, 'w') as export_file:
             for line in self.todo_items:
                 export_file.write(str(line)+'\n')
+
+    def load_items_from_file(self, file_name):
+        with open(file_name, 'r') as import_file:
+            for line in import_file:
+                line = line.strip('\n')
+                item_deatails = line.split("-")
+                if 'True' in item_deatails[2]:
+                    item = ToDoItem(item_deatails[0].strip(), item_deatails[1].strip(), True)
+                else:
+                    item = ToDoItem(item_deatails[0].strip(), item_deatails[1].strip())
+                self.todo_items.append(item)
 
     @staticmethod
     def create_table_heading():

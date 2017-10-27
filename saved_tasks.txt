@@ -1,3 +1,4 @@
-nauka gita - na jutro - isDone: False
-moze dziala - chyba tak - isDone: False
 ciekawe jak teraz - dupa dupa - isDone: False
+cos innego - na jutro - isDone: False
+ciekawe jak teraz - dupa dupa - isDone: False
+cos nowego - heheheh - isDone: False

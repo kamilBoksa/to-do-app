@@ -121,6 +121,7 @@ def display_specific_task(todo_items):
 
 def handle_ui_choice():
     todo_items = ToDoList()
+    todo_items.load_items_from_file('saved_tasks.txt')
 
     while True:
         choice = input("User choice: ")
