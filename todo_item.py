@@ -14,5 +14,8 @@ class ToDoItem:
     def mark_item(self):
         self.is_done = True
 
+    def unmark_item(self):
+        self.is_done = False
+
     def __str__(self):
         return self.name + " - " + self.description + " - isDone: " + str(self.is_done)

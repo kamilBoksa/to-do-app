@@ -74,6 +74,20 @@ def mark_task(todo_items):
             task.mark_item()
 
 
+def unmark_task(todo_items):
+    task_name = input("Enter name of task you want to unmark: ")
+    for task in todo_items.todo_items:
+        if task_name == task.name:
+            task.unmark_item()
+
+
+def display_specific_task(todo_items):
+    task_name = input("Enter name of task you want to display: ")
+    for task in todo_items.todo_items:
+        if task_name == task.name:
+            print(task)
+
+
 def handle_ui_choice():
     todo_items = ToDoList()
 
@@ -88,9 +102,11 @@ def handle_ui_choice():
         elif choice == "4":
             mark_task(todo_items)
         elif choice == "5":
-            print(todo_items)
+            unmark_task(todo_items)
         elif choice == "6":
-            pass  # display specific task
+            print(todo_items)
+        elif choice == "7":
+            display_specific_task(todo_items)
         elif choice == "0":
             exit()
         else:
