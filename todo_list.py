@@ -9,8 +9,8 @@ class ToDoList:
     def add_item(self, item):
         self.todo_items.append(item)
 
-    def delete_item(self, item_name):
-        self.todo_items.remove(item_name)
+    def delete_item(self, item):
+        self.todo_items.remove(item)
 
 
     def __str__(self):
