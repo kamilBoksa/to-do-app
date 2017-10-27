@@ -17,5 +17,5 @@ class ToDoList:
         index_start = 1
         display_list = []
         for index, item in enumerate(self.todo_items, index_start):
-            display_list.append(str(index)+". "+str(item))
+            display_list.append("ID:" + str(index) + " Task: " + str(item.name)+"\n")
         return "".join(display_list)
