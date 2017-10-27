@@ -20,9 +20,10 @@ Expected features:
 
 Extra features:
     - show time
-    - printing in table form
-    - saving to file when ends
-    - loading from file when program starts
+    - printing in table form - DONE
+    - saving to file when ends - DONE
+    - loading from file when program starts - DONE
     - marking task using symbols
+
 
 Each action described above should have view.
