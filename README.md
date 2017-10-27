@@ -21,5 +21,7 @@ Expected features:
 Extra features:
     - show time
     - printing in table form
-    
+    - saving to file when ends
+    - loading from file when program starts
+
 Each action described above should have view.
