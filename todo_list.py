@@ -12,6 +12,11 @@ class ToDoList:
     def delete_item(self, item):
         self.todo_items.remove(item)
 
+    def save_items_to_file(self, file_name):
+        with open(file_name, 'a') as export_file:
+            for line in self.todo_items:
+                export_file.write(str(line)+'\n')
+
     @staticmethod
     def create_table_heading():
         heading = []

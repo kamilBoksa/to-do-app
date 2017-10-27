@@ -1,0 +1,10 @@
+Welcome to Task Manager.
+  What do you want to do?
+  (1) Add task.
+  (2) Modify task.
+  (3) Delete task.
+  (4) Mark task.
+  (5) Unmark task.
+  (6) Display tasks list.
+  (7) Display specific task.
+  (0) Save & Exit program.

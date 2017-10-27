@@ -139,6 +139,7 @@ def handle_ui_choice():
         elif choice == "7":
             display_specific_task(todo_items)
         elif choice == "0":
+            todo_items.save_items_to_file('saved_tasks.txt')
             exit()
         else:
             print("Invalid input!")
