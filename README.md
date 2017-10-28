@@ -23,7 +23,7 @@ Extra features:
     - printing in table form - DONE
     - saving to file when ends - DONE
     - loading from file when program starts - DONE
-    - marking task using symbols
+    - marking task using symbols - DONE
 
 
 Each action described above should have view.
