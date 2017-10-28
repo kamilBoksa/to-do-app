@@ -1,4 +1,5 @@
 from todo_controller import *
+import os
 
 
 def import_ui():
@@ -33,6 +34,8 @@ def create_task_description():
 def handle_ui_choice(tasks_list):
     while True:
         try:
+            os.system("clear")
+            print(import_ui())
             choice = input("User choice: ")
             if choice == "1":
                 task_name = create_task_name()
@@ -86,10 +89,10 @@ def handle_ui_choice(tasks_list):
         except ValueError:
             print("No task with that name found!")
 
+        wait_time = input("Press any key to continue")
 
 def main():
     tasks_list = initialize_tasks_list()
-    print(import_ui())
     handle_ui_choice(tasks_list)
 
 
