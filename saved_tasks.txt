@@ -1,4 +1,2 @@
-uuuuuu - bbbb - [x]
-bbb - ccc - [ ]
-ddddddddddddddd - aaaaaaaaaaaaa - [ ]
-bcdef - ggggg - [ ]
+Nauka gita - very important - [ ]
+Zabawa pygame - zrobienie prostej gry typu pong - [ ]

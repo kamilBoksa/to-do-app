@@ -1,5 +1,6 @@
 from todo_controller import *
 import os
+import datetime
 
 
 def import_ui():
@@ -7,7 +8,13 @@ def import_ui():
     with open('user_interface.txt') as ui_file:
         for line in ui_file:
             ui.append(line)
+    ui.insert(1, get_current_date())
     return "".join(ui)
+
+
+def get_current_date():
+    now = datetime.datetime.now()
+    return now.strftime("|Today's date: %d-%m-%Y|" + "\n")
 
 
 def create_task_name():
@@ -31,7 +38,7 @@ def create_task_description():
         return task_description
 
 
-def handle_ui_choice(tasks_list):
+def handle_user_choice(tasks_list):
     while True:
         try:
             os.system("clear")
@@ -94,7 +101,7 @@ def handle_ui_choice(tasks_list):
 
 def main():
     tasks_list = initialize_tasks_list()
-    handle_ui_choice(tasks_list)
+    handle_user_choice(tasks_list)
 
 
 if __name__ == "__main__":

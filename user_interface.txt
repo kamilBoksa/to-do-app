@@ -1,4 +1,4 @@
-Welcome to Task Manager.
+Welcome to Task Manager
   What do you want to do?
   (1) Add task.
   (2) Modify task.
