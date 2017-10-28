@@ -1,4 +1,4 @@
-ciekawe jak teraz - dupa dupa - isDone: False
-cos innego - na jutro - isDone: False
-ciekawe jak teraz - dupa dupa - isDone: False
-cos nowego - heheheh - isDone: False
+uuuuuu - bbbb - [x]
+bbb - ccc - [ ]
+ddddddddddddddd - aaaaaaaaaaaaa - [ ]
+bcdef - ggggg - [ ]

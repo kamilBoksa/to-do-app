@@ -18,15 +18,20 @@ class ToDoList:
                 export_file.write(str(line)+'\n')
 
     def load_items_from_file(self, file_name):
-        with open(file_name, 'r') as import_file:
-            for line in import_file:
-                line = line.strip('\n')
-                item_deatails = line.split("-")
-                if 'True' in item_deatails[2]:
-                    item = ToDoItem(item_deatails[0].strip(), item_deatails[1].strip(), True)
-                else:
-                    item = ToDoItem(item_deatails[0].strip(), item_deatails[1].strip())
-                self.todo_items.append(item)
+        done_status = '[x]'
+        try:
+            with open(file_name, 'r') as import_file:
+                for line in import_file:
+                    line = line.strip('\n')
+                    item_deatails = line.split("-")
+                    if done_status in item_deatails[2]:
+                        item = ToDoItem(item_deatails[0].strip(), item_deatails[1].strip(), True)
+                        item.mark_item()
+                    else:
+                        item = ToDoItem(item_deatails[0].strip(), item_deatails[1].strip())
+                    self.todo_items.append(item)
+        except IndexError:
+            pass
 
     @staticmethod
     def create_table_heading():
@@ -56,6 +61,6 @@ class ToDoList:
         display_list.append("".join(heading))
 
         for index, item in enumerate(self.todo_items, index_start):
-            display_list.append("|  " + str(index) + " | " + str(item.name) + "\n")
+            display_list.append("|  " + str(index) + " | " + str(item.name) + " " + item.is_done_mark + "\n")
             display_list.append(underline + "\n")
         return "".join(display_list)
