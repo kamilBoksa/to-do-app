@@ -91,6 +91,7 @@ def handle_ui_choice(tasks_list):
 
         wait_time = input("Press any key to continue")
 
+
 def main():
     tasks_list = initialize_tasks_list()
     handle_ui_choice(tasks_list)
