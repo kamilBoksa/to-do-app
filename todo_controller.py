@@ -109,9 +109,9 @@ def unmark_task(todo_items):
 def display_specific_task(todo_items):
     try:
         task_name = input("Enter name of task you want to display: ")
-        for task in todo_items.todo_items:
+        for index, task in enumerate(todo_items.todo_items):
             if task_name == task.name:
-                print(task)
+                print("ID:" + str(index) + " " + str(task))
                 break
         else:
             raise ValueError
