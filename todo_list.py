@@ -23,12 +23,17 @@ class ToDoList:
             with open(file_name, 'r') as import_file:
                 for line in import_file:
                     line = line.strip('\n')
-                    item_deatails = line.split("-")
-                    if done_status in item_deatails[2]:
-                        item = ToDoItem(item_deatails[0].strip(), item_deatails[1].strip(), True)
+                    separator = "-"
+                    item_deatails = line.split(separator)
+                    status_index = 2
+                    name_index = 0
+                    description_index = 1
+                    if done_status in item_deatails[status_index]:
+                        item = ToDoItem(item_deatails[name_index].strip(),
+                                        item_deatails[description_index].strip(), True)
                         item.mark_item()
                     else:
-                        item = ToDoItem(item_deatails[0].strip(), item_deatails[1].strip())
+                        item = ToDoItem(item_deatails[name_index].strip(), item_deatails[description_index].strip())
                     self.todo_items.append(item)
         except IndexError:
             pass
@@ -51,6 +56,10 @@ class ToDoList:
         return heading
 
     def __str__(self):
+        """
+        Returns tasks list formatted in table form, with heading and column names
+        """
+
         index_start = 1
         display_list = []
         max_name_len = 20

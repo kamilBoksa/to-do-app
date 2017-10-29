@@ -8,7 +8,8 @@ def import_ui():
     with open('user_interface.txt') as ui_file:
         for line in ui_file:
             ui.append(line)
-    ui.insert(1, get_current_date())
+    date_index = 1
+    ui.insert(date_index, get_current_date())
     return "".join(ui)
 
 
@@ -57,7 +58,7 @@ def handle_user_choice(tasks_list):
                                     [2] Edit description.
                                     : """)
                         if decision == "1":
-                            while True:
+                            while True:  # loop used to check if new name has correct length
                                 new_name = input("Enter task new name: ")
                                 if len(new_name) > 20:
                                     print("Too long task name!")
@@ -65,7 +66,7 @@ def handle_user_choice(tasks_list):
                                 modify_task_name(tasks_list, task_name, new_name)
                                 break
                         elif decision == "2":
-                            while True:
+                            while True:  # loop used to check if new description has correct length
                                 new_description = input("Enter task new description: ")
                                 if len(new_description) > 150:
                                     print("Too long task description!")
@@ -96,7 +97,7 @@ def handle_user_choice(tasks_list):
         except ValueError:
             print("No task with that name found!")
 
-        wait_time = input("Press any key to continue")
+        stoppage = input("Press any key to continue")
 
 
 def main():

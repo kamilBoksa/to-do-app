@@ -21,4 +21,5 @@ class ToDoItem:
         self.is_done_mark = "[ ]"
 
     def __str__(self):
-        return self.name + " - " + self.description + " - " + self.is_done_mark
+        separator = " - "
+        return self.name + separator + self.description + separator + self.is_done_mark
