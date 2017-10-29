@@ -1,2 +1,3 @@
 Nauka gita - very important - [ ]
 Zabawa pygame - zrobienie prostej gry typu pong - [ ]
+Check clean code - Modify variable names - [x]
