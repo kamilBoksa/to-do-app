@@ -19,7 +19,7 @@ Expected features:
         3.display description
 
 Extra features:
-    - show time
+    - show date - DONE
     - printing in table form - DONE
     - saving to file when ends - DONE
     - loading from file when program starts - DONE
